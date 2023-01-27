@@ -1,5 +1,6 @@
 const loginUser = require('./utilisateurs/login-user');
 const registerUser = require('./utilisateurs/register-user');
+const get_user = require('./utilisateurs/get-user');
 
 module.exports = {
   paths:{
@@ -11,5 +12,9 @@ module.exports = {
       {
         ...registerUser
       }, 
+    '/user':
+      {
+        ...get_user
+      },
   } 
 }

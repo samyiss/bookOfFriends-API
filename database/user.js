@@ -35,7 +35,7 @@ exports.registerUser = async(req,res) =>{
                 nom: nom,
                 prenom: prenom,
                 courriel: courriel,
-                telephone: Tel,
+                telephone: telephone,
                 adresse: adresse,
                 ville: ville,
                 codePostal: codePostal,
@@ -104,7 +104,6 @@ exports.loginUser = async (req, res) => {
             res.status(200).json({ token: user.stsTokenManager.accessToken,
                                    id: user.uid,
                                    name: user.providerData[0].displayName,
-                                   photoURL: user.providerData[0].photoURL,
                             });
         }).catch((error) => {
             switch(error.code) {
@@ -129,5 +128,38 @@ exports.loginUser = async (req, res) => {
         });
     }else{
         res.status(400).json({ success:false, message: "Email ou mot de passe manquant" });
+    }
+}
+
+
+exports.getUser = async (req, res) => {
+    const database = ref(getDatabase());
+    const auth = getAuth(fapp);
+    const user = auth.currentUser;
+
+    if(user !== null){
+        get(child(database, `users/${user.uid}`)).then(async (data) => {
+            if (data.exists()) {
+                const snapshot = data.val();  
+
+                return res.status(200).send(snapshot);
+                    
+            } else{
+                res.status(404).send({
+                    success: false,
+                    message: "l'utilisateur n'existe pas",
+                });
+            }  
+        }).catch((error) => {
+            res.status(500).send({
+                success: false,
+                message: error,
+            });
+        });
+    }else{
+        res.status(401).send({
+            success: false,
+            message: "Vous devez être connecté",
+        });
     }
 }
