@@ -1,0 +1,44 @@
+{
+  "name": "boof-of-friends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "docs": "^0.3.2-canary.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-openapi-validator": "^4.13.7",
+    "express-validator": "^6.14.0",
+    "firebase": "^9.10.0",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^2.3.0",
+    "mssql": "^9.0.1",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.20",
+    "sqlite3": "^5.0.2",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/near_me/backend.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/near_me/backend/issues"
+  },
+  "homepage": "https://gitlab.com/near_me/backend#readme"
+}
