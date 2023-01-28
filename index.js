@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const docs = require('./docs');
 const swaggerUi = require('swagger-ui-express');
-const { loginUser, registerUser, getUser } = require('./database/user');
+const { loginUser, registerUser, getUser, update_Password, resetPassword, deleteUser, updateProfile, updateEmail } = require('./database/user');
 
 require("dotenv").config(); 
 
@@ -24,6 +24,11 @@ app.use('/',swaggerUi.serve, swaggerUi.setup(docs));
 router.post('/auth/token', loginUser);
 router.post('/auth/register', registerUser);
 router.get('/user', getUser)
+router.post('/user/update-password', update_Password)
+router.post('/user/update-email', updateEmail)
+router.post('/user/password-oublie', resetPassword)
+router.delete('/user', deleteUser)
+router.put('/user', updateProfile)
 
 
 const port = process.env.PORT || 3000;
