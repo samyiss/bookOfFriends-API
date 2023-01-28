@@ -1,6 +1,6 @@
 module.exports = {
     // method of operation
-    post: {
+    put: {
       tags: ["Utilisateurs"], // operation's tag.
       summary: "Route pour mettre à jour le mot de passe", // operation's desc.
       operationId: "UpdatePassword", // unique operation id.

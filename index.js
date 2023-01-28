@@ -24,8 +24,8 @@ app.use('/',swaggerUi.serve, swaggerUi.setup(docs));
 router.post('/auth/token', loginUser);
 router.post('/auth/register', registerUser);
 router.get('/user', getUser)
-router.post('/user/update-password', update_Password)
-router.post('/user/update-email', updateEmail)
+router.put('/user/update-password', update_Password)
+router.put('/user/update-email', updateEmail)
 router.post('/user/password-oublie', resetPassword)
 router.delete('/user', deleteUser)
 router.put('/user', updateProfile)

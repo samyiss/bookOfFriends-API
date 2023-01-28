@@ -1,6 +1,6 @@
 module.exports = {
     // method of operation
-    post: {
+    put: {
       tags: ["Utilisateurs"], // operation's tag.
       security: [
         {
