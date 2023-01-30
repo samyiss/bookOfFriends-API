@@ -97,8 +97,8 @@ exports.registerUser = async(req,res) =>{
 }
 
 exports.loginUser = async (req, res) => {
-    const email = req.body.email;
-    const password = req.body.password;
+    const email = req.body.courriel;
+    const password = req.body.mdp;
 
     const auth = getAuth(fapp);
 

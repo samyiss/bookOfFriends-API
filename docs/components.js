@@ -14,18 +14,18 @@ module.exports = {
         // modele pour connexion
         TokenCreationPayload: {
           type: "object",
-          required: ["email", "password"],
+          required: ["courriel", "mdp"],
           properties: {
-            email: {
+            courriel: {
               type: "string",
             },
-            password: {
+            mdp: {
               type: "string",
             },
           },
           example: {
-              email: "samylichine.iss@gmail.com",
-              password: "E2072931",
+              courriel: "samylichine.iss@gmail.com",
+              mdp: "E2072931",
             },
         },
         // modele de token
@@ -168,14 +168,14 @@ module.exports = {
         // modele de input pour le courriel
         EmailPayload: {
           type: "object", // data-type
-          required: ["email"], // required fields
+          required: ["courriel"], // required fields
           properties: {
-            email: {
+            courriel: {
               type: "string", // data-type
             },
           },
           example: {
-            email: "samylichine.iss@gmail.com"
+            courriel: "samylichine.iss@gmail.com"
           },
         },
       
