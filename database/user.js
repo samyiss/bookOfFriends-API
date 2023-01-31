@@ -234,7 +234,7 @@ exports.update_Password = async(req,res) =>{
 
 exports.resetPassword = async(req,res) =>{
     const auth = getAuth(fapp);
-    const email = req.body.email
+    const email = req.body.courriel
 
     if(email !== ""){
         sendPasswordResetEmail(auth, email)
